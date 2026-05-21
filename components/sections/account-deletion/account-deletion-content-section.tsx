@@ -15,28 +15,42 @@ import { Section } from "@/components/ui/section";
 import {
   accountDeletionHero,
   accountDeletionSummary,
+  dataDeletionIntro,
+  dataDeletionProcessingText,
+  dataDeletionRequestFields,
+  dataDeletionRetentionText,
   deletedDataItems,
   deletionSteps,
   processingTime,
   retainedDataIntro,
   retainedDataItems,
+  separatelyDeletedDataItems,
 } from "@/data/account-deletion";
 
 const supportMailHref = `mailto:${accountDeletionHero.supportEmail}?subject=${encodeURIComponent(
   accountDeletionHero.emailSubject,
 )}`;
 
+const dataDeletionMailHref = `mailto:${accountDeletionHero.supportEmail}?subject=${encodeURIComponent(
+  accountDeletionHero.dataDeletionEmailSubject,
+)}`;
+
 function InstructionCard({
   children,
   icon: Icon,
+  id,
   title,
 }: {
   children: ReactNode;
   icon: LucideIcon;
+  id?: string;
   title: string;
 }) {
   return (
-    <section className="soft-card rounded-[28px] px-6 py-7 md:px-8 md:py-8">
+    <section
+      className="soft-card anchor-offset rounded-[28px] px-6 py-7 md:px-8 md:py-8"
+      id={id}
+    >
       <div className="space-y-5">
         <div className="flex items-center gap-3">
           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-soft text-brand-hover">
@@ -95,6 +109,66 @@ export function AccountDeletionContentSection() {
               </ul>
             </InstructionCard>
 
+            <InstructionCard
+              icon={Database}
+              id="data-deletion"
+              title="Удаление данных без удаления аккаунта"
+            >
+              <p className="body-text text-text-secondary">{dataDeletionIntro}</p>
+
+              <div className="rounded-[24px] border border-brand-primary/25 bg-brand-soft/60 p-5">
+                <p className="body-sm-text font-semibold text-text-primary">
+                  Адрес для запроса удаления данных
+                </p>
+                <Link
+                  className="mt-2 inline-flex max-w-full rounded-cta bg-surface px-4 py-3 text-base font-bold text-brand-hover shadow-soft transition-colors hover:text-brand-primary sm:text-lg"
+                  href={dataDeletionMailHref}
+                >
+                  <span className="truncate">{accountDeletionHero.supportEmail}</span>
+                </Link>
+                <p className="body-sm-text mt-3 text-text-secondary">
+                  Тема письма: «{accountDeletionHero.dataDeletionEmailSubject}».
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <h3 className="body-text font-semibold text-text-primary">В письме укажите:</h3>
+                <ol className="space-y-3">
+                  {dataDeletionRequestFields.map((field, index) => (
+                    <li key={field} className="flex gap-4">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-soft-strong text-sm font-bold text-brand-hover">
+                        {index + 1}
+                      </span>
+                      <p className="body-text pt-0.5 text-text-secondary">{field}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              <div className="space-y-3">
+                <h3 className="body-text font-semibold text-text-primary">
+                  Вы можете запросить удаление следующих данных:
+                </h3>
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {separatelyDeletedDataItems.map((item) => (
+                    <li
+                      key={item}
+                      className="flex gap-3 rounded-[20px] bg-background-soft px-4 py-3"
+                    >
+                      <Check
+                        aria-hidden="true"
+                        className="mt-1 h-4 w-4 shrink-0 text-brand-hover"
+                      />
+                      <span className="body-sm-text text-text-secondary">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <p className="body-text text-text-secondary">{dataDeletionProcessingText}</p>
+              <p className="body-text text-text-secondary">{dataDeletionRetentionText}</p>
+            </InstructionCard>
+
             <InstructionCard icon={Database} title="Какие данные могут быть сохранены">
               <p className="body-text text-text-secondary">{retainedDataIntro}</p>
               <ul className="space-y-3">
@@ -128,6 +202,13 @@ export function AccountDeletionContentSection() {
                     </div>
                   ))}
                 </dl>
+
+                <Link
+                  className="body-sm-text inline-flex rounded-cta border border-border-soft bg-surface px-4 py-2 font-semibold text-brand-hover transition-colors hover:border-brand-primary/40 hover:bg-brand-soft/50"
+                  href="#data-deletion"
+                >
+                  Удаление отдельных данных
+                </Link>
               </div>
             </div>
 
