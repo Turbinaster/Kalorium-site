@@ -9,7 +9,8 @@ export type PagePath =
   | "/updates"
   | "/about"
   | "/contacts"
-  | "/privacy-policy";
+  | "/privacy-policy"
+  | "/account-deletion";
 
 export const pageMeta: Record<
   PagePath,
@@ -73,5 +74,10 @@ export const pageMeta: Record<
     title: "Политика конфиденциальности — Калориум",
     description:
       "Политика конфиденциальности сайта и приложения Калориум.",
+  },
+  "/account-deletion": {
+    title: "Удаление аккаунта и данных — Калориум",
+    description:
+      "Инструкция по запросу удаления аккаунта Калориум и связанных с ним данных через поддержку приложения.",
   },
 };

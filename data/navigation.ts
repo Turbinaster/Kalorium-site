@@ -21,6 +21,7 @@ export const mobileNavigation: NavigationItem[] = [
   { label: "Обновления", href: "/updates" },
   { label: "Контакты", href: "/contacts" },
   { label: "Политика конфиденциальности", href: "/privacy-policy" },
+  { label: "Удаление аккаунта", href: "/account-deletion" },
 ];
 
 export const footerNavigation: ReadonlyArray<{
@@ -49,6 +50,7 @@ export const footerNavigation: ReadonlyArray<{
     title: "Документы",
     items: [
       { label: "Политика конфиденциальности", href: "/privacy-policy" },
+      { label: "Удаление аккаунта", href: "/account-deletion" },
       { label: "RuStore", href: RUSTORE_URL, external: true },
     ],
   },
