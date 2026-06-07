@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { StoreDownloadButtons } from "@/components/ui/store-download-buttons";
 import { nextStepsContent } from "@/data/calculator";
-import { RUSTORE_URL } from "@/data/site";
 
 export function NextStepsSection() {
   return (
@@ -39,11 +39,7 @@ export function NextStepsSection() {
                 <p className="body-text text-text-secondary">{nextStepsContent.ctaCard.text}</p>
               </div>
               <div className="flex flex-col gap-3">
-                <Button asChild size="lg">
-                  <a href={RUSTORE_URL} rel="noreferrer" target="_blank">
-                    {nextStepsContent.ctaCard.primaryCta}
-                  </a>
-                </Button>
+                <StoreDownloadButtons buttonClassName="w-full" layout="stacked" />
                 <Button asChild size="lg" variant="secondary">
                   <Link href="/diary">{nextStepsContent.ctaCard.secondaryCta}</Link>
                 </Button>

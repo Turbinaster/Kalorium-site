@@ -2,6 +2,7 @@ import { faqSections } from "@/data/faq";
 import { pageMeta, type PagePath } from "@/data/page-meta";
 import {
   APP_PLATFORM_LABEL,
+  GOOGLE_PLAY_URL,
   RUSTORE_URL,
   SITE_DESCRIPTION,
   SITE_NAME,
@@ -22,7 +23,7 @@ export function createOrganizationStructuredData(): StructuredData {
     "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
     url: SITE_URL,
-    sameAs: [RUSTORE_URL],
+    sameAs: [GOOGLE_PLAY_URL, RUSTORE_URL],
   };
 }
 
@@ -51,7 +52,7 @@ export function createSoftwareApplicationStructuredData(): StructuredData {
     description: SITE_DESCRIPTION,
     applicationCategory: "LifestyleApplication",
     operatingSystem: APP_PLATFORM_LABEL,
-    downloadUrl: RUSTORE_URL,
+    downloadUrl: GOOGLE_PLAY_URL,
     offers: {
       "@type": "Offer",
       price: "0",

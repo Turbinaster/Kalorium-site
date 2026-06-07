@@ -4,8 +4,8 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { StoreDownloadButtons } from "@/components/ui/store-download-buttons";
 import { faqHero } from "@/data/faq";
-import { RUSTORE_URL } from "@/data/site";
 
 export function FaqHeroSection() {
   return (
@@ -32,15 +32,13 @@ export function FaqHeroSection() {
                   {faqHero.description}
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <Button asChild size="lg">
+              <div className="flex flex-col gap-3">
+                <div>
+                  <Button asChild className="w-full sm:w-auto" size="lg">
                   <Link href="/calculator">{faqHero.primaryCta}</Link>
-                </Button>
-                <Button asChild size="lg" variant="secondary">
-                  <a href={RUSTORE_URL} rel="noreferrer" target="_blank">
-                    {faqHero.secondaryCta}
-                  </a>
-                </Button>
+                  </Button>
+                </div>
+                <StoreDownloadButtons buttonClassName="w-full sm:w-auto" />
               </div>
               <div className="rounded-[24px] border border-border-soft bg-white/70 px-4 py-4">
                 <p className="body-sm-text text-text-muted">{faqHero.note}</p>

@@ -2,15 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { MobileMenu } from "@/components/layout/mobile-menu";
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { DownloadMenu } from "@/components/ui/download-menu";
 import { headerNavigation } from "@/data/navigation";
-import { RUSTORE_URL, SITE_NAME } from "@/data/site";
+import { SITE_NAME } from "@/data/site";
 import { cn } from "@/lib/cn";
 
 type SiteHeaderProps = {
@@ -117,12 +116,7 @@ export function SiteHeader({ logoSrc = null }: SiteHeaderProps) {
           </nav>
 
           <div className="ml-auto hidden lg:block">
-            <Button asChild>
-              <a href={RUSTORE_URL} rel="noreferrer" target="_blank">
-                Скачать
-                <ArrowUpRight className="h-4 w-4" />
-              </a>
-            </Button>
+            <DownloadMenu />
           </div>
 
           <div className="ml-auto lg:hidden">

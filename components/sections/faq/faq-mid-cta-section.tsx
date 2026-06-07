@@ -5,8 +5,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { StoreDownloadButtons } from "@/components/ui/store-download-buttons";
 import { faqMidCta } from "@/data/faq";
-import { RUSTORE_URL } from "@/data/site";
 
 import { useFaqSearchContext } from "@/components/sections/faq/faq-search-section";
 
@@ -32,11 +32,10 @@ export function FaqMidCtaSection() {
               <Button asChild size="lg">
                 <Link href="/calculator">{faqMidCta.primaryCta}</Link>
               </Button>
-              <Button asChild size="lg" variant="secondary">
-                <a href={RUSTORE_URL} rel="noreferrer" target="_blank">
-                  {faqMidCta.secondaryCta}
-                </a>
-              </Button>
+              <StoreDownloadButtons
+                buttonClassName="w-full sm:w-auto lg:w-full"
+                className="sm:flex-row lg:flex-col"
+              />
             </div>
           </div>
         </div>

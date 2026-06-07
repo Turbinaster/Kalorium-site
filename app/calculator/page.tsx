@@ -15,7 +15,6 @@ import { WhyNotEnoughSection } from "@/components/sections/calculator/why-not-en
 import { JsonLd } from "@/components/seo/json-ld";
 import { CtaSection } from "@/components/ui/cta-section";
 import { calculatorFinalCta } from "@/data/calculator";
-import { RUSTORE_URL } from "@/data/site";
 import { createMetadata } from "@/lib/seo";
 import { createBreadcrumbStructuredData } from "@/lib/structured-data";
 
@@ -56,13 +55,9 @@ export default function CalculatorPage() {
       <WhyNotEnoughSection />
       <CalculatorFaqSection />
       <CtaSection
+        downloadActions
         description={calculatorFinalCta.text}
         note={calculatorFinalCta.note}
-        primaryAction={{
-          label: calculatorFinalCta.primaryCta,
-          href: RUSTORE_URL,
-          external: true,
-        }}
         secondaryAction={{
           label: calculatorFinalCta.secondaryCta,
           href: "/diary",

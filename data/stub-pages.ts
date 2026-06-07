@@ -1,4 +1,4 @@
-import { RUSTORE_URL } from "@/data/site";
+import { GOOGLE_PLAY_URL } from "@/data/site";
 
 export const stubPages = {
   "/calculator": {
@@ -7,7 +7,7 @@ export const stubPages = {
     description:
       "На следующем этапе здесь будет реализован полноценный интерактивный калькулятор нормы калорий, КБЖУ, воды и пояснений к расчёту.",
     primaryCta: { label: "Вернуться на главную", href: "/" },
-    secondaryCta: { label: "Скачать в RuStore", href: RUSTORE_URL, external: true },
+    secondaryCta: { label: "Скачать Калориум", href: GOOGLE_PLAY_URL, external: true },
   },
   "/photo": {
     eyebrow: "Этап 1 из 7",
@@ -15,7 +15,7 @@ export const stubPages = {
     description:
       "На следующем этапе здесь будет реализована полная продуктовая страница о том, как работает подсчёт калорий по фото в Калориуме.",
     primaryCta: { label: "Вернуться на главную", href: "/" },
-    secondaryCta: { label: "Скачать в RuStore", href: RUSTORE_URL, external: true },
+    secondaryCta: { label: "Скачать Калориум", href: GOOGLE_PLAY_URL, external: true },
   },
   "/diary": {
     eyebrow: "Этап 1 из 7",
@@ -23,7 +23,7 @@ export const stubPages = {
     description:
       "На следующем этапе здесь будет реализована полная страница о дневнике питания, контроле КБЖУ, воды и прогресса.",
     primaryCta: { label: "Вернуться на главную", href: "/" },
-    secondaryCta: { label: "Скачать в RuStore", href: RUSTORE_URL, external: true },
+    secondaryCta: { label: "Скачать Калориум", href: GOOGLE_PLAY_URL, external: true },
   },
   "/faq": {
     eyebrow: "Этап 1 из 7",
@@ -39,14 +39,14 @@ export const stubPages = {
     description:
       "На следующем этапе здесь будет реализована страница с реальными отзывами пользователей из RuStore.",
     primaryCta: { label: "Вернуться на главную", href: "/" },
-    secondaryCta: { label: "Скачать в RuStore", href: RUSTORE_URL, external: true },
+    secondaryCta: { label: "Скачать Калориум", href: GOOGLE_PLAY_URL, external: true },
   },
   "/download": {
     eyebrow: "Этап 1 из 7",
     title: "Скачать приложение",
     description:
-      "На следующем этапе здесь будет реализована конверсионная страница установки приложения Калориум через RuStore.",
-    primaryCta: { label: "Скачать в RuStore", href: RUSTORE_URL, external: true },
+      "На следующем этапе здесь будет реализована конверсионная страница установки приложения Калориум через Google Play и RuStore.",
+    primaryCta: { label: "Скачать Калориум", href: GOOGLE_PLAY_URL, external: true },
     secondaryCta: { label: "Вернуться на главную", href: "/" },
   },
   "/updates": {
@@ -54,7 +54,7 @@ export const stubPages = {
     title: "Обновления Калориума",
     description:
       "На следующем этапе здесь будет реализована страница с историей версий и обновлений приложения.",
-    primaryCta: { label: "Скачать в RuStore", href: RUSTORE_URL, external: true },
+    primaryCta: { label: "Скачать Калориум", href: GOOGLE_PLAY_URL, external: true },
     secondaryCta: { label: "Вернуться на главную", href: "/" },
   },
   "/about": {
@@ -63,7 +63,7 @@ export const stubPages = {
     description:
       "На следующем этапе здесь будет реализована страница об официальном сайте, приложении, подходе сервиса и поддержке.",
     primaryCta: { label: "Вернуться на главную", href: "/" },
-    secondaryCta: { label: "Скачать в RuStore", href: RUSTORE_URL, external: true },
+    secondaryCta: { label: "Скачать Калориум", href: GOOGLE_PLAY_URL, external: true },
   },
   "/contacts": {
     eyebrow: "Этап 1 из 7",
@@ -71,7 +71,7 @@ export const stubPages = {
     description:
       "На следующем этапе здесь будет реализована страница с контактами и способами связи.",
     primaryCta: { label: "Вернуться на главную", href: "/" },
-    secondaryCta: { label: "Скачать в RuStore", href: RUSTORE_URL, external: true },
+    secondaryCta: { label: "Скачать Калориум", href: GOOGLE_PLAY_URL, external: true },
   },
   "/privacy-policy": {
     eyebrow: "Этап 1 из 7",
@@ -79,7 +79,7 @@ export const stubPages = {
     description:
       "На следующем этапе здесь будет размещён полный текст политики конфиденциальности.",
     primaryCta: { label: "Вернуться на главную", href: "/" },
-    secondaryCta: { label: "Скачать в RuStore", href: RUSTORE_URL, external: true },
+    secondaryCta: { label: "Скачать Калориум", href: GOOGLE_PLAY_URL, external: true },
   },
 } as const;
 

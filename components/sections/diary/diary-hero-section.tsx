@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { PhoneMockupPlaceholder } from "@/components/ui/phone-mockup-placeholder";
 import { Section } from "@/components/ui/section";
+import { StoreDownloadButtons } from "@/components/ui/store-download-buttons";
 import { assetPaths } from "@/data/assets";
 import { diaryHero } from "@/data/diary";
-import { RUSTORE_URL } from "@/data/site";
 import { resolveOptionalPublicAsset } from "@/lib/assets";
 
 const floatingCards = [
@@ -68,15 +68,13 @@ export function DiaryHeroSection() {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-3 sm:flex-row">
-                  <Button asChild size="lg">
-                    <a href={RUSTORE_URL} rel="noreferrer" target="_blank">
-                      {diaryHero.primaryCta}
-                    </a>
-                  </Button>
-                  <Button asChild size="lg" variant="secondary">
+                <div className="flex flex-col gap-3">
+                  <StoreDownloadButtons buttonClassName="w-full sm:w-auto" />
+                  <div>
+                    <Button asChild className="w-full sm:w-auto" size="lg" variant="secondary">
                     <Link href="/calculator">{diaryHero.secondaryCta}</Link>
-                  </Button>
+                    </Button>
+                  </div>
                 </div>
 
                 <p className="body-sm-text max-w-2xl text-text-muted">{diaryHero.note}</p>

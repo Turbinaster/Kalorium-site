@@ -5,9 +5,8 @@ import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { Button } from "@/components/ui/button";
+import { DownloadMenu } from "@/components/ui/download-menu";
 import { mobileNavigation } from "@/data/navigation";
-import { RUSTORE_URL } from "@/data/site";
 import { cn } from "@/lib/cn";
 
 export function MobileMenu() {
@@ -125,11 +124,11 @@ export function MobileMenu() {
           </nav>
 
           <div className="mt-6 pt-5">
-            <Button asChild className="w-full" size="lg">
-              <a href={RUSTORE_URL} rel="noreferrer" target="_blank">
-                Скачать в RuStore
-              </a>
-            </Button>
+            <DownloadMenu
+              fullWidth
+              mode="inline"
+              onStoreSelect={() => setIsOpen(false)}
+            />
           </div>
         </div>
       </div>

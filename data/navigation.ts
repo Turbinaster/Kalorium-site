@@ -1,4 +1,4 @@
-import { RUSTORE_URL } from "@/data/site";
+import { GOOGLE_PLAY_URL, RUSTORE_URL } from "@/data/site";
 
 export type NavigationItem = {
   label: string;
@@ -51,6 +51,7 @@ export const footerNavigation: ReadonlyArray<{
     items: [
       { label: "Политика конфиденциальности", href: "/privacy-policy" },
       { label: "Удаление аккаунта", href: "/account-deletion" },
+      { label: "Google Play", href: GOOGLE_PLAY_URL, external: true },
       { label: "RuStore", href: RUSTORE_URL, external: true },
     ],
   },

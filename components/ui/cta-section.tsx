@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { StoreDownloadButtons } from "@/components/ui/store-download-buttons";
 import { cn } from "@/lib/cn";
 
 type ActionLink = {
@@ -14,8 +15,9 @@ type ActionLink = {
 type CtaSectionProps = {
   title: string;
   description: string;
-  primaryAction: ActionLink;
+  primaryAction?: ActionLink;
   secondaryAction?: ActionLink;
+  downloadActions?: boolean;
   note?: string;
   className?: string;
 };
@@ -28,7 +30,7 @@ function ActionAnchor({
   variant: "primary" | "secondary";
 }) {
   const props = action.external
-    ? { target: "_blank", rel: "noreferrer" }
+    ? { target: "_blank", rel: "noopener noreferrer" }
     : undefined;
 
   return (
@@ -43,6 +45,7 @@ function ActionAnchor({
 export function CtaSection({
   title,
   description,
+  downloadActions = false,
   primaryAction,
   secondaryAction,
   note,
@@ -59,7 +62,14 @@ export function CtaSection({
               {note ? <p className="body-sm-text text-text-muted">{note}</p> : null}
             </div>
             <div className={cn("flex flex-col gap-3 sm:flex-row lg:flex-col")}>
-              <ActionAnchor action={primaryAction} variant="primary" />
+              {downloadActions ? (
+                <StoreDownloadButtons
+                  buttonClassName="w-full sm:w-auto lg:w-full"
+                  className="sm:flex-row lg:flex-col"
+                />
+              ) : primaryAction ? (
+                <ActionAnchor action={primaryAction} variant="primary" />
+              ) : null}
               {secondaryAction ? (
                 <ActionAnchor action={secondaryAction} variant="secondary" />
               ) : null}

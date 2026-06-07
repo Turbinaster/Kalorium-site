@@ -26,7 +26,7 @@ export function ReviewsListSection() {
           <Link
             className="body-text inline-flex items-center gap-2 text-brand-hover transition-colors hover:text-brand-primary"
             href={RUSTORE_URL}
-            rel="noreferrer"
+            rel="noopener noreferrer"
             target="_blank"
           >
             {reviewsList.moreLinkLabel}

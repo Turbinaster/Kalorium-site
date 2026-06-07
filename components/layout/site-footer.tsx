@@ -34,7 +34,7 @@ export function SiteFooter() {
                       <a
                         className="body-text text-text-secondary transition-colors hover:text-text-primary"
                         href={item.href}
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         target="_blank"
                       >
                         {item.label}

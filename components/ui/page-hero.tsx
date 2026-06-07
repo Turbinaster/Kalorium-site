@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { StoreDownloadButtons } from "@/components/ui/store-download-buttons";
 
 type HeroAction = {
   label: string;
@@ -16,8 +17,9 @@ type PageHeroProps = {
   eyebrow: string;
   title: string;
   description: string;
-  primaryAction: HeroAction;
-  secondaryAction: HeroAction;
+  primaryAction?: HeroAction;
+  secondaryAction?: HeroAction;
+  downloadActions?: boolean;
   note?: string;
 };
 
@@ -29,7 +31,7 @@ function ActionButton({
   variant: "primary" | "secondary";
 }) {
   const externalProps = action.external
-    ? { target: "_blank", rel: "noreferrer" }
+    ? { target: "_blank", rel: "noopener noreferrer" }
     : undefined;
 
   return (
@@ -46,6 +48,7 @@ export function PageHero({
   eyebrow,
   title,
   description,
+  downloadActions = false,
   primaryAction,
   secondaryAction,
   note,
@@ -66,8 +69,26 @@ export function PageHero({
                 <p className="body-lg-text max-w-2xl text-text-secondary">{description}</p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
-                <ActionButton action={primaryAction} variant="primary" />
-                <ActionButton action={secondaryAction} variant="secondary" />
+                {downloadActions ? (
+                  <>
+                    <StoreDownloadButtons
+                      buttonClassName="w-full sm:w-auto"
+                      className="contents sm:flex"
+                    />
+                    {secondaryAction ? (
+                      <ActionButton action={secondaryAction} variant="secondary" />
+                    ) : null}
+                  </>
+                ) : (
+                  <>
+                    {primaryAction ? (
+                      <ActionButton action={primaryAction} variant="primary" />
+                    ) : null}
+                    {secondaryAction ? (
+                      <ActionButton action={secondaryAction} variant="secondary" />
+                    ) : null}
+                  </>
+                )}
               </div>
               {note ? <p className="body-sm-text max-w-2xl text-text-muted">{note}</p> : null}
             </div>
