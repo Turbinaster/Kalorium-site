@@ -20,7 +20,7 @@ export function SiteFooter() {
               </span>
             </div>
             <p className="body-text max-w-sm text-text-secondary">
-              Калориум — приложение для подсчёта калорий по фото, контроля КБЖУ и ведения дневника питания.
+              Калориум — счетчик калорий для Android: калории по фото, контроль КБЖУ и дневник питания.
             </p>
           </div>
 

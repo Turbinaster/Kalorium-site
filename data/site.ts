@@ -1,7 +1,7 @@
 export const SITE_NAME = "Калориум";
 export const SITE_URL = "https://kalorium.su";
 export const SITE_DESCRIPTION =
-  "Официальный сайт приложения Калориум: подсчёт калорий по фото, дневник питания, норма КБЖУ, вода, графики и установка через Google Play или RuStore.";
+  "Официальный сайт приложения Калориум: счетчик калорий для Android, калории по фото, дневник питания, норма КБЖУ, вода, графики и установка через Google Play или RuStore.";
 export const GOOGLE_PLAY_URL =
   "https://play.google.com/store/apps/details?id=online.neurochef.dietolog";
 export const RUSTORE_URL =
