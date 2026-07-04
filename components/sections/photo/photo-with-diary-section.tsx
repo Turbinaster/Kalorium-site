@@ -1,7 +1,9 @@
 import { Container } from "@/components/ui/container";
 import { PhoneMockupPlaceholder } from "@/components/ui/phone-mockup-placeholder";
 import { Section } from "@/components/ui/section";
+import { assetPaths } from "@/data/assets";
 import { photoWithDiary } from "@/data/photo";
+import { resolveOptionalPublicAsset } from "@/lib/assets";
 
 function MiniSurface({ className }: { className: string }) {
   return (
@@ -18,6 +20,8 @@ function MiniSurface({ className }: { className: string }) {
 }
 
 export function PhotoWithDiarySection() {
+  const diaryAssetSrc = resolveOptionalPublicAsset(assetPaths.homeScreenDiary);
+
   return (
     <Section tone="soft">
       <Container>
@@ -38,7 +42,15 @@ export function PhotoWithDiarySection() {
               <div className="rounded-[28px] bg-gradient-to-b from-brand-soft/70 via-white to-background-soft px-6 py-8">
                 <MiniSurface className="-left-3 top-8" />
                 <MiniSurface className="-right-3 bottom-10" />
-                <PhoneMockupPlaceholder className="max-w-[280px]" variant="diary" />
+                <PhoneMockupPlaceholder
+                  assetSrc={diaryAssetSrc}
+                  className="max-w-[280px]"
+                  decorative={!diaryAssetSrc}
+                  imageAlt="Дневник питания по времени суток"
+                  imageSizes="(min-width: 1280px) 280px, (min-width: 768px) 34vw, 82vw"
+                  title="Дневник питания по времени суток"
+                  variant="diary"
+                />
               </div>
             </div>
           </div>

@@ -2,9 +2,13 @@ import { Container } from "@/components/ui/container";
 import { PhoneMockupPlaceholder } from "@/components/ui/phone-mockup-placeholder";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { assetPaths } from "@/data/assets";
 import { diaryDayOverview } from "@/data/diary";
+import { resolveOptionalPublicAsset } from "@/lib/assets";
 
 export function DiaryDayOverviewSection() {
+  const dashboardAssetSrc = resolveOptionalPublicAsset(assetPaths.homeScreenDashboard);
+
   return (
     <Section tone="soft">
       <Container>
@@ -27,7 +31,15 @@ export function DiaryDayOverviewSection() {
           </div>
 
           <div className="rounded-[30px] bg-gradient-to-b from-surface via-white to-background-soft px-5 py-7 shadow-soft">
-            <PhoneMockupPlaceholder className="max-w-[290px]" variant="dashboard" />
+            <PhoneMockupPlaceholder
+              assetSrc={dashboardAssetSrc}
+              className="max-w-[290px]"
+              decorative={!dashboardAssetSrc}
+              imageAlt="Суточная норма и остаток калорий"
+              imageSizes="(min-width: 1280px) 290px, (min-width: 768px) 34vw, 82vw"
+              title="Суточная норма и остаток калорий"
+              variant="dashboard"
+            />
           </div>
         </div>
       </Container>

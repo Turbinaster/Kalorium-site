@@ -11,9 +11,18 @@ import { photoHero } from "@/data/photo";
 import { resolveOptionalPublicAsset } from "@/lib/assets";
 
 const floatingCards = [
-  { label: "По фото", position: "left-0 top-8 md:-left-3 lg:left-2" },
-  { label: "КБЖУ", position: "right-0 top-24 md:-right-3 lg:right-3" },
-  { label: "Дневник", position: "left-8 bottom-6 md:left-2 lg:left-12" },
+  {
+    label: "Распознано",
+    position: "right-8 top-12 md:right-4 lg:right-8",
+  },
+  {
+    label: "По фото",
+    position: "left-[12%] top-[32%] md:left-[8%] lg:left-[12%]",
+  },
+  {
+    label: "КБЖУ",
+    position: "right-[11%] top-[64%] md:right-[7%] lg:right-[11%]",
+  },
 ];
 
 function FloatingCard({

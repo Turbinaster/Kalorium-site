@@ -16,13 +16,13 @@ export function ReviewsPreviewSection() {
             description={homeReviewsPreview.intro}
             title={homeReviewsPreview.title}
           />
-          <div className="mx-auto max-w-3xl rounded-[24px] border border-border-soft bg-white/70 px-5 py-4 text-center">
-            <p className="body-sm-text text-text-muted">{homeReviewsPreview.note}</p>
-          </div>
           <div className="grid gap-6 lg:grid-cols-3">
-            {homeReviewsPreview.cards.map((card, index) => (
+            {homeReviewsPreview.cards.map((card) => (
               <ReviewCard
-                key={`${card.source}-${index}`}
+                avatar={card.avatar}
+                date={card.date}
+                key={`${card.title}-${card.date}`}
+                rating={card.rating}
                 source={card.source}
                 text={card.text}
                 title={card.title}

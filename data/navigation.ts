@@ -12,13 +12,13 @@ export const headerNavigation: NavigationItem[] = [
   { label: "Дневник питания", href: "/diary" },
   { label: "FAQ", href: "/faq" },
   { label: "Отзывы", href: "/reviews" },
+  { label: "Обновления", href: "/updates" },
   { label: "О приложении", href: "/about" },
 ];
 
 export const mobileNavigation: NavigationItem[] = [
   { label: "Главная", href: "/" },
   ...headerNavigation,
-  { label: "Обновления", href: "/updates" },
   { label: "Контакты", href: "/contacts" },
   { label: "Политика конфиденциальности", href: "/privacy-policy" },
   { label: "Удаление аккаунта", href: "/account-deletion" },

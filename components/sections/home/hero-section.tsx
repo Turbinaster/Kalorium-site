@@ -11,9 +11,18 @@ import { homeFeatureChips, homeHero } from "@/data/home";
 import { resolveOptionalPublicAsset } from "@/lib/assets";
 
 const floatingCards = [
-  { label: "1450 ккал", position: "left-4 top-8 md:left-1 lg:left-8" },
-  { label: "Белки 82 г", position: "right-4 top-24 md:right-1 lg:right-8" },
-  { label: "По фото", position: "left-10 bottom-10 md:left-6 lg:left-16" },
+  {
+    label: "620 ккал",
+    position: "right-8 top-12 md:right-6 md:top-12 lg:right-10",
+  },
+  {
+    label: "По фото",
+    position: "left-[15%] top-[31%] md:left-[12%] lg:left-[15%]",
+  },
+  {
+    label: "Белки 48 г",
+    position: "left-[12%] top-[51%] md:left-[9%] lg:left-[12%]",
+  },
 ];
 
 function HeroFloatingCard({

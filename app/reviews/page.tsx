@@ -1,6 +1,7 @@
 import { ReviewsFinalCtaSection } from "@/components/sections/reviews/reviews-final-cta-section";
 import { ReviewsHeroSection } from "@/components/sections/reviews/reviews-hero-section";
 import { ReviewsListSection } from "@/components/sections/reviews/reviews-list-section";
+import { ReviewsRatingSection } from "@/components/sections/reviews/reviews-rating-section";
 import { ReviewsThemesSection } from "@/components/sections/reviews/reviews-themes-section";
 import { JsonLd } from "@/components/seo/json-ld";
 import { reviewsHero } from "@/data/reviews";
@@ -19,6 +20,7 @@ export default function ReviewsPage() {
         )}
       />
       <ReviewsHeroSection />
+      <ReviewsRatingSection />
       <ReviewsThemesSection />
       <ReviewsListSection />
       <ReviewsFinalCtaSection />

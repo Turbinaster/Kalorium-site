@@ -1,9 +1,13 @@
 import { Container } from "@/components/ui/container";
 import { PhoneMockupPlaceholder } from "@/components/ui/phone-mockup-placeholder";
 import { Section } from "@/components/ui/section";
+import { assetPaths } from "@/data/assets";
 import { diaryGraphs } from "@/data/diary";
+import { resolveOptionalPublicAsset } from "@/lib/assets";
 
 export function DiaryGraphsSection() {
+  const graphsAssetSrc = resolveOptionalPublicAsset(assetPaths.homeScreenGraphs);
+
   return (
     <Section>
       <Container>
@@ -19,7 +23,15 @@ export function DiaryGraphsSection() {
 
           <div className="rounded-[30px] bg-gradient-to-b from-brand-soft/70 via-surface to-background-soft px-5 py-7 shadow-soft">
             <div className="rounded-[24px] bg-white/80 px-4 py-6">
-              <PhoneMockupPlaceholder className="max-w-[290px]" variant="graphs" />
+              <PhoneMockupPlaceholder
+                assetSrc={graphsAssetSrc}
+                className="max-w-[290px]"
+                decorative={!graphsAssetSrc}
+                imageAlt="Наглядные графики и история прогресса"
+                imageSizes="(min-width: 1280px) 290px, (min-width: 768px) 34vw, 82vw"
+                title="Наглядные графики и история прогресса"
+                variant="graphs"
+              />
             </div>
           </div>
         </div>
