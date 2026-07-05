@@ -1,5 +1,5 @@
 export const SITE_NAME = "Калориум";
-export const SITE_URL = "https://kalorium.su";
+export const SITE_URL = "https://kalorium.ru";
 export const SITE_DESCRIPTION =
   "Официальный сайт приложения Калориум: счетчик калорий для Android, калории по фото, дневник питания, норма КБЖУ, вода, графики и установка через Google Play или RuStore.";
 export const GOOGLE_PLAY_URL =
